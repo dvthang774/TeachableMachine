@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Loading effect */
+#loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading .dot {
+  width: 20px;
+  height: 20px;
+  background-color: #555;
+  margin: 5px;
+  border-radius: 50%;
+  animation: loading 1.2s infinite ease-in-out;
+}
+
+#loading .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+#loading .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app h1 {
+  font-size: 40px;
+  color: #5ab2ff;
+}
+
+.input-area {
+  margin-top: 20px;
+}
+
+.input-area input {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.input-area button {
+  outline: none;
+  border: none;
+  padding: 15px 20px;
+  background-color: #ffec9e;
+  font-weight: 600;
+  color: #333;
+  border-radius: 15px;
+}
+
+.input-area button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.output-area {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.output-area h3 {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.output-instructions-list {
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.output-instructions-item {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+table {
+  margin-top: 10px;
+  border-collapse: collapse; /* Xóa đường viền giữa các ô */
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  font-size: 16px;
+}
+
+th {
+  background-color: #f0f0f0;
+}
