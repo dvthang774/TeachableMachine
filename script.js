@@ -8,7 +8,7 @@ const productsTable = document.querySelector('.output-products-table')
 
 import { GoogleGenerativeAI } from '@google/generative-ai'
 
-const API_KEY = 'your_api_key'
+const API_KEY = 'AIzaSyA5iXmhJlCTuV9nvi0DJsoGHuLFm64S_HY'
 
 const genAI = new GoogleGenerativeAI(API_KEY)
 
@@ -26,10 +26,10 @@ button.onclick = async () => {
   app.style.display = 'none'
   const inputValue = input.value
 
-  const prompt = `Hướng dẫn chăm sóc da mặt ${inputValue} với các yêu cầu sau:
-  - Đầu ra: json với các keys lần lượt là "Hướng dẫn chăm sóc da", "Sản phẩm chăm sóc da tham khảo"
-  - Với key "Hướng dẫn chăm sóc da" thì value của nó là array chứa các bước chăm sóc da (kiểu dữ liệu string)
-  - Với key "Sản phẩm chăm sóc da tham khảo" thì value của nó là array chứa các sản phẩm chăm sóc da (kiểu dữ liệu string) theo định dạng "Loại sản phẩm: các sản phẩm của các hãng cụ thể"`
+  const prompt = `Hướng dẫn chăm sóc cây bệnh ${inputValue} với các yêu cầu sau:
+  - Đầu ra: json với các keys lần lượt là "Hướng dẫn chăm sóc cây", "Sản phẩm chăm sóc cây tham khảo"
+  - Với key "Hướng dẫn chăm sóc cây" thì value của nó là array chứa các bước chăm sóc cây (kiểu dữ liệu string)
+  - Với key "Sản phẩm chăm sóc cây tham khảo" thì value của nó là array chứa các sản phẩm chăm sóc cây (kiểu dữ liệu string) theo định dạng "Loại sản phẩm: các sản phẩm của các hãng cụ thể"`
 
   const result = await model.generateContent(prompt)
   const response = await result.response
@@ -39,8 +39,8 @@ button.onclick = async () => {
 
   console.log(outputObject)
 
-  const instructions = outputObject['Hướng dẫn chăm sóc da']
-  const products = outputObject['Sản phẩm chăm sóc da tham khảo']
+  const instructions = outputObject['Hướng dẫn chăm sóc cây']
+  const products = outputObject['Sản phẩm chăm sóc cây tham khảo']
 
   instructionsList.innerHTML = instructions
     .map((instruction) => {
