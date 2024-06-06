@@ -1,0 +1,6 @@
+[submodule "data"]
+	path = data
+	url = https://github.com/dvthang774/TeachableMachine.git
+[submodule "model"]
+	path = model
+	url = https://github.com/dvthang774/TeachableMachine.git
